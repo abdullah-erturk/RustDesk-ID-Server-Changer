@@ -1,4 +1,3 @@
-
 :: INFO:
 :: RustDesk Github: https://github.com/rustdesk/rustdesk
 
@@ -14,16 +13,16 @@ goto :eof
 :Main
 cls
 if exist "C:\Program Files\RustDesk\rustdesk.exe" (
-cd "C:\Program Files\RustDesk\"
-for /f "delims=" %%i in ('rustdesk.exe --get-id ^| more') do set rustdesk_id=%%i
-goto :Run
-) else (
-echo.
-echo RustDesk is not installed, install RustDesk first.
-echo.
-echo Press any key to exit.
-pause >nul
-exit
+  cd "C:\Program Files\RustDesk\"
+  for /f "delims=" %%i in ('rustdesk.exe --get-id ^| more') do set rustdesk_id=%%i
+  goto :Run
+  ) else (
+  echo.
+  echo RustDesk is not installed, install RustDesk first.
+  echo.
+  echo Press any key to exit.
+  pause >nul
+  exit
 )
 :Run
 pushd %temp% >nul 2>&1
