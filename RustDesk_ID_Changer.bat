@@ -1,4 +1,3 @@
-
 :: INFO:
 :: RustDesk Github: https://github.com/rustdesk/rustdesk
 
@@ -15,27 +14,27 @@ goto :eof
 cls
 set rustdesk_loc="C:\Program Files\RustDesk"
 for %%i in (
-    "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk"
-    "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk"
-    "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk"
-) do (
-    for /f "tokens=2*" %%a in ('reg query "%%i" /v "InstallLocation" 2^>nul') do (
-        set rustdesk_loc=%%b
-        goto :Main-found
-    )
+  "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk"
+  "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk"
+  "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk"
+  ) do (
+  for /f "tokens=2*" %%a in ('reg query "%%i" /v "InstallLocation" 2^>nul') do (
+    set rustdesk_loc=%%b
+    goto :Main-found
+  )
 )
 :Main-found
 if exist "%rustdesk_loc%\rustdesk.exe" (
-cd "%rustdesk_loc%"
-for /f "delims=" %%i in ('"%rustdesk_loc%\rustdesk.exe" --get-id ^| more') do set rustdesk_id=%%i
-goto :Run
-) else (
-echo.
-echo RustDesk is not installed, install RustDesk first.
-echo.
-echo Press any key to exit.
-pause >nul
-exit
+  cd "%rustdesk_loc%"
+  for /f "delims=" %%i in ('"%rustdesk_loc%\rustdesk.exe" --get-id ^| more') do set rustdesk_id=%%i
+  goto :Run
+  ) else (
+  echo.
+  echo RustDesk is not installed, install RustDesk first.
+  echo.
+  echo Press any key to exit.
+  pause >nul
+  exit
 )
 :Run
 pushd %temp% >nul 2>&1
