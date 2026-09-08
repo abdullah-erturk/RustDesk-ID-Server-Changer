@@ -43,6 +43,8 @@ Tüm komut dosyaları Windows 7, 8.1, 10 ve 11'de test edilmiştir (PowerShell 2
 
 > **Güncelleme (v3.2):** [#15 numaralı bildirim](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/issues/15) referans alınarak, RustDesk kurulum dizini artık doğrudan Windows Kayıt Defteri (Registry) üzerinden dinamik olarak tespit edilmektedir. Ayrıca bizim tarafımızdan tespit edilen Windows 7 ve PowerShell 2.0 genel uyumluluk sorunları da bu sürümde çözülmüş; 3. seçenek (Özel ID Belirleme) Windows 10 ve üzeri sistemlerle sınırlandırılmıştır.
 
+> **Güncelleme (v3.3):** robpomeroy tarafından gönderilen [#17 numaralı Pull Request](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/pull/17) referans alınarak, scriptin farklı sürücülerden (örneğin USB bellek) çalıştırıldığında hata vermesine neden olan dizin değiştirme (`cd`) sorunu çözülmüştür.
+
 </details>
 
 <details>
@@ -79,6 +81,8 @@ All scripts are tested on Windows 7 - 8.1 - 10 and 11 (PowerShell 2.0 fully comp
 > **Update (v3.1):** Thanks to the [#13 issue](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/issues/13) raised by user T3Cabon, remote connection drop issues have been resolved; service termination operations are now executed after configuration is applied.
 
 > **Update (v3.2):** Thanks to the [#15 issue](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/issues/15), the RustDesk installation directory is now dynamically detected via the Windows Registry. Additionally, general Windows 7 and PowerShell 2.0 compatibility issues (discovered internally) have been resolved; Option 3 (Custom ID Setting) has been restricted to Windows 10 and later systems.
+
+> **Update (v3.3):** Thanks to the [#17 Pull Request](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/pull/17) submitted by robpomeroy, a directory change (`cd`) bug that caused errors when running the script from different drives (e.g., USB flash drives) has been resolved.
 
 </details>
 
