@@ -18,10 +18,13 @@ goto :eof
 ::===============================================================================================================
 :Main
 cls
-if exist "C:\Program Files\RustDesk\rustdesk.exe" (
-cd "C:\Program Files\RustDesk\"
-for /f "delims=" %%i in ('rustdesk.exe --get-id ^| more') do set rustdesk_id=%%i
-goto :Run
+
+set "RUSTDESK_PATH=C:\Program Files\RustDesk"
+
+if exist "%RUSTDESK_PATH%\rustdesk.exe" (
+  cd /d "%RUSTDESK_PATH%"
+  for /f "delims=" %%i in ('rustdesk.exe --get-id ^| more') do set rustdesk_id=%%i
+  goto :Run
 ) else (
 echo.
 if %LANG_TR%==1 (
