@@ -58,7 +58,7 @@ Tüm işlemler, config dosyası düzenlenirken **tüm RustDesk süreçlerini (t�
 
 > **Güncelleme (v3.3):** [#17](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/pull/17) referans alınarak, scriptin farklı sürücülerden (USB vb.) çalıştırıldığında hata vermesine neden olan dizin değiştirme sorunu çözülmüştür.
 
-**Güncelleme (v4):**
+> **Güncelleme (v4):**
 - **Durum göstergesi:** Menü başlığında mevcut ID ve aktif sunucu (Public/Private + adres) anlık gösterilir.
 - **Doğrulama & log:** Her işlem sonrası `rustdesk.exe --get-id` ile doğrulama ve zaman damgalı log kaydı.
 - **Yeni seçenekler:** Tam yapılandırma içe aktarma (7), kalıcı şifre ayarlama (8), son ID değişikliğini geri alma (9), ayarlar kilit PIN'ini sıfırlama (P).
@@ -120,7 +120,7 @@ While editing config files, all operations stop **every RustDesk process (across
 
 > **Update (v3.3):** Thanks to [#17](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/pull/17), a directory-change bug that caused errors when running from other drives (USB, etc.) was fixed.
 
-**Update (v4):**
+> **Update (v4):**
 - **Status indicator:** Current ID and active server (Public/Private + address) shown live in the menu header.
 - **Verification & logging:** Each operation is verified with `rustdesk.exe --get-id` and written to a timestamped log.
 - **New options:** Import full configuration (7), set permanent password (8), undo last ID change (9), reset settings-lock PIN (P).
