@@ -58,7 +58,15 @@ Tüm işlemler, config dosyası düzenlenirken **tüm RustDesk süreçlerini (t�
 
 > **Güncelleme (v3.3):** [#17](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/pull/17) referans alınarak, scriptin farklı sürücülerden (USB vb.) çalıştırıldığında hata vermesine neden olan dizin değiştirme sorunu çözülmüştür.
 
-> **Güncelleme (v4):** Durum göstergesi (mevcut ID + sunucu), işlem sonrası `--get-id` ile doğrulama, log kaydı; yeni seçenekler: tam yapılandırma içe aktarma (7), kalıcı şifre (8), son ID değişikliğini geri alma (9) ve ayarlar kilit PIN'ini sıfırlama (P). ID değiştirme artık RustDesk 1.5'in `enc_id` yapısıyla uyumludur ve değişiklikler hem servis hem kullanıcı config dosyasına uygulanır. Özel ID için minimum uzunluk işletim sistemine göre otomatik ayarlanır (Win10/11: 6, Win7/8: 7, Server: 8). Config dosyası düzenlenirken tüm RustDesk süreçleri durdurularak çoklu oturum (Windows Server/RDP) ortamlarındaki "ID geri dönüyor" sorunu giderilmiştir. Kullanıcı girdileri artık PowerShell'e ortam değişkenleriyle güvenli biçimde aktarılır.
+**Güncelleme (v4):**
+- **Durum göstergesi:** Menü başlığında mevcut ID ve aktif sunucu (Public/Private + adres) anlık gösterilir.
+- **Doğrulama & log:** Her işlem sonrası `rustdesk.exe --get-id` ile doğrulama ve zaman damgalı log kaydı.
+- **Yeni seçenekler:** Tam yapılandırma içe aktarma (7), kalıcı şifre ayarlama (8), son ID değişikliğini geri alma (9), ayarlar kilit PIN'ini sıfırlama (P).
+- **RustDesk 1.5 uyumu:** `enc_id` yapısıyla uyumlu ID değişimi; değişiklik hem servis hem kullanıcı config dosyasına uygulanır.
+- **OS'a göre minimum ID uzunluğu:** Win10/11 → 6, Win7/8 → 7, Server → 8 karakter; bilgisayar adı kısaysa ön uyarı.
+- **Çoklu oturum düzeltmesi:** Config düzenlenirken tüm RustDesk süreçleri durdurularak Windows Server/RDP ortamlarındaki "ID geri dönüyor" sorunu giderildi.
+- **Güvenli girdi:** Kullanıcı girdileri PowerShell'e ortam değişkenleriyle aktarılır.
+- **Diğer:** Registry'den dinamik kurulum yolu tespiti ve işlem sonrası GUI otomatik yenileme.
 
 </details>
 
@@ -112,7 +120,15 @@ While editing config files, all operations stop **every RustDesk process (across
 
 > **Update (v3.3):** Thanks to [#17](https://github.com/abdullah-erturk/RustDesk-ID-Server-Changer/pull/17), a directory-change bug that caused errors when running from other drives (USB, etc.) was fixed.
 
-> **Update (v4):** Status indicator (current ID + server), post-operation verification via `--get-id`, and logging; new options: import full configuration (7), set permanent password (8), undo last ID change (9), and reset settings-lock PIN (P). ID changing is now compatible with RustDesk 1.5's `enc_id` storage and is applied to both the service and user config files. The minimum length for a custom ID is set automatically by OS (Win10/11: 6, Win7/8: 7, Server: 8). While editing config files, all RustDesk processes are stopped, fixing the "ID reverts" problem in multi-session (Windows Server/RDP) environments. User input is now passed to PowerShell safely via environment variables.
+**Update (v4):**
+- **Status indicator:** Current ID and active server (Public/Private + address) shown live in the menu header.
+- **Verification & logging:** Each operation is verified with `rustdesk.exe --get-id` and written to a timestamped log.
+- **New options:** Import full configuration (7), set permanent password (8), undo last ID change (9), reset settings-lock PIN (P).
+- **RustDesk 1.5 compatibility:** `enc_id`-aware ID change, applied to both the service and user config files.
+- **OS-based minimum ID length:** Win10/11 → 6, Win7/8 → 7, Server → 8 characters; pre-warning when the computer name is too short.
+- **Multi-session fix:** All RustDesk processes are stopped while editing config, fixing the "ID reverts" problem on Windows Server/RDP.
+- **Safer input:** User input is passed to PowerShell via environment variables.
+- **Other:** Dynamic registry path detection and GUI auto-restart after each operation.
 
 </details>
 
