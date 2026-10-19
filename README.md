@@ -118,4 +118,4 @@ While editing config files, all operations stop **every RustDesk process (across
 
 Sample preview:
 
-![sample](https://github.com/abdullah-erturk/RustDesk-ID-Changer/blob/main/preview.jpg)
+![sample](https://raw.githubusercontent.com/abdullah-erturk/RustDesk-ID-Server-Changer/main/preview.jpg)
